@@ -77,6 +77,74 @@
             </objects>
             <point key="canvasLocation" x="742" y="-9"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="Mcl-lh-GJj">
+            <objects>
+                <viewController storyboardIdentifier="CommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ae5-12-0Z2" customClass="CommentViewController" customModule="PostsAndComments" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKq-fL-9Dz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2KJ-1F-3Se">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ae5-12-0Z2" id="Bpi-dl-gvD"/>
+                                    <outlet property="delegate" destination="Ae5-12-0Z2" id="lEQ-hE-jNQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dIu-9h-UJx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2KJ-1F-3Se" firstAttribute="leading" secondItem="dIu-9h-UJx" secondAttribute="leading" id="BdD-nZ-xc7"/>
+                            <constraint firstItem="dIu-9h-UJx" firstAttribute="bottom" secondItem="2KJ-1F-3Se" secondAttribute="bottom" id="OKc-Vh-UrN"/>
+                            <constraint firstItem="2KJ-1F-3Se" firstAttribute="top" secondItem="dIu-9h-UJx" secondAttribute="top" id="QHU-zV-SrV"/>
+                            <constraint firstItem="2KJ-1F-3Se" firstAttribute="centerX" secondItem="uKq-fL-9Dz" secondAttribute="centerX" id="Z6l-LU-ep6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTableView" destination="2KJ-1F-3Se" id="Xbc-8U-esO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8z-qB-KWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="-9"/>
+        </scene>
+        <!--Comment Search Result View Controller-->
+        <scene sceneID="yhY-BJ-H0U">
+            <objects>
+                <viewController storyboardIdentifier="CommentSearchResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aKN-3C-q80" customClass="CommentSearchResultViewController" customModule="PostsAndComments" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C5p-tS-Zuj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-r2-rCY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aKN-3C-q80" id="DE2-Aj-2sb"/>
+                                    <outlet property="delegate" destination="aKN-3C-q80" id="wXn-gq-ojj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RH5-bD-1gO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hjh-r2-rCY" firstAttribute="leading" secondItem="RH5-bD-1gO" secondAttribute="leading" id="7Ok-s8-bZw"/>
+                            <constraint firstItem="hjh-r2-rCY" firstAttribute="top" secondItem="RH5-bD-1gO" secondAttribute="top" id="caK-Xb-e6F"/>
+                            <constraint firstItem="hjh-r2-rCY" firstAttribute="centerX" secondItem="C5p-tS-Zuj" secondAttribute="centerX" id="i4x-gf-Cyz"/>
+                            <constraint firstItem="RH5-bD-1gO" firstAttribute="bottom" secondItem="hjh-r2-rCY" secondAttribute="bottom" id="zxb-bZ-3TO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentSearchResultTableView" destination="hjh-r2-rCY" id="CzL-gy-vay"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Dx-6s-dHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="-9"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

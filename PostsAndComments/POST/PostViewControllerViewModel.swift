@@ -16,11 +16,13 @@ class PostViewControllerViewModel {
         try await commentViewModel.fetchComments()
     }
     
-    func searchPostsFor(_ searchText: String, _ resultsController: PostSearchResultViewController) {
-        let posts = postViewModel.searchPostsFor(searchText)
-        
-        let postSearchResultViewModel = PostSearchResultViewModel(posts)
-        resultsController.viewModel = postSearchResultViewModel
-        resultsController.postSearchResultTableView.reloadData()
+    func searchPostsFor(_ searchText: String) -> [Post] {
+        postViewModel.searchPostsFor(searchText)
+    }
+    
+    func commentsFor(_ postId: Int) -> [Comment]{
+        commentViewModel.comments.filter{
+            $0.postId == postId
+        }
     }
 }

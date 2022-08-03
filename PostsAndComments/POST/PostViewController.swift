@@ -27,6 +27,7 @@ class PostViewController: BaseViewController {
         
         postTableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostTableViewCell.identifier)
         let postSearchResultViewController = PostSearchResultViewController.instantiate()
+        postSearchResultViewController.appCoordinator = self.appCoordinator
         searchController = UISearchController(searchResultsController: postSearchResultViewController)
         searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
@@ -58,17 +59,26 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = viewModel.postViewModel.posts[indexPath.row].title
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comments = viewModel.commentsFor(viewModel.postViewModel.posts[indexPath.row].id)
+        appCoordinator?.showComments(comments)
+    }
 }
 
 extension PostViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text,
-              let postSearchResultViewController = searchController.searchResultsController as? PostSearchResultViewController
+              let resultsController = searchController.searchResultsController as? PostSearchResultViewController
         else {
             return
         }
-        viewModel.searchPostsFor(text, postSearchResultViewController)
-        print(text)
+        
+        let results = viewModel.searchPostsFor(text)
+        
+        let postSearchResultViewModel = PostSearchResultViewModel(results, viewModel.commentViewModel.comments)
+        resultsController.viewModel = postSearchResultViewModel
+        resultsController.postSearchResultTableView.reloadData()
     }
 }
 

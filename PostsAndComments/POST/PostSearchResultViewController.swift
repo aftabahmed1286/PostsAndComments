@@ -35,4 +35,10 @@ extension PostSearchResultViewController: UITableViewDelegate, UITableViewDataSo
         cell.textLabel?.text = viewModel?.posts[indexPath.row].title
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {return}
+        let comments = viewModel.commentsFor(viewModel.posts[indexPath.row].id)
+        appCoordinator?.showComments(comments)
+    }
 }
