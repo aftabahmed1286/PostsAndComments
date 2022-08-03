@@ -9,7 +9,7 @@ import UIKit
 
 class PostViewController: BaseViewController {
 
-    let viewModel: PostViewControllerViewModel = PostViewControllerViewModel()
+    let viewModel: PostViewModel = PostViewModel()
     
     var searchController: UISearchController?
     
@@ -25,13 +25,20 @@ class PostViewController: BaseViewController {
     func viewSetup() {
         self.title = "Posts"
         
+        registerNib()
+        searchSetup()
+    }
+    
+    func registerNib() {
         postTableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostTableViewCell.identifier)
+    }
+    
+    func searchSetup() {
         let postSearchResultViewController = PostSearchResultViewController.instantiate()
         postSearchResultViewController.appCoordinator = self.appCoordinator
         searchController = UISearchController(searchResultsController: postSearchResultViewController)
         searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
-        
     }
 
     func loadData() {
@@ -49,19 +56,19 @@ class PostViewController: BaseViewController {
 
 extension PostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.postViewModel.posts.count
+        viewModel.postHelper.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as? PostTableViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = viewModel.postViewModel.posts[indexPath.row].title
+        cell.textLabel?.text = viewModel.postHelper.posts[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let comments = viewModel.commentsFor(viewModel.postViewModel.posts[indexPath.row].id)
+        let comments = viewModel.commentsFor(viewModel.postHelper.posts[indexPath.row].id)
         appCoordinator?.showComments(comments)
     }
 }
@@ -76,7 +83,7 @@ extension PostViewController: UISearchResultsUpdating {
         
         let results = viewModel.searchPostsFor(text)
         
-        let postSearchResultViewModel = PostSearchResultViewModel(results, viewModel.commentViewModel.comments)
+        let postSearchResultViewModel = PostSearchResultViewModel(results, viewModel.commentHelper.comments)
         resultsController.viewModel = postSearchResultViewModel
         resultsController.postSearchResultTableView.reloadData()
     }

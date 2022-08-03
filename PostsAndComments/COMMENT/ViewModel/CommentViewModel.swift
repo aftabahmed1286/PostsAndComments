@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CommentViewControllerViewModel {
+class CommentViewModel {
     var comments: [Comment] = []
     
     func searchCommentsFor(_ searchText: String) -> [Comment] {

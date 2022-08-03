@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostViewModel: APIRequestProtocol {
+class PostsHelper: APIRequestProtocol {
     var endPoint: EndPoint = .posts
     
     var posts: [Post] = []

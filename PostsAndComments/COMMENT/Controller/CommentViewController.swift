@@ -9,7 +9,7 @@ import UIKit
 
 class CommentViewController: BaseViewController {
 
-    var viewModel: CommentViewControllerViewModel?
+    var viewModel: CommentViewModel?
     
     var searchController: UISearchController?
     
@@ -25,15 +25,20 @@ class CommentViewController: BaseViewController {
     func viewSetup() {
         self.title = "Comments"
         
+        registerNib()
+        searchSetup()
+    }
+    
+    func registerNib() {
         commentTableView.register(UINib(nibName: CommentTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CommentTableViewCell.identifier)
+    }
+    
+    func searchSetup() {
         let commentSearchResultViewController = CommentSearchResultViewController.instantiate()
         searchController = UISearchController(searchResultsController: commentSearchResultViewController)
         searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
-        
     }
-
-    
     
 }
 

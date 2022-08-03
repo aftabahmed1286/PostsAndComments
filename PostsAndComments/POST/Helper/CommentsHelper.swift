@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CommentViewModel: APIRequestProtocol {
+class CommentsHelper: APIRequestProtocol {
     var endPoint: EndPoint = .comments
     
     var comments: [Comment] = []

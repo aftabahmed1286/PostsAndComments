@@ -7,21 +7,21 @@
 
 import Foundation
 
-class PostViewControllerViewModel {
-    let postViewModel = PostViewModel()
-    let commentViewModel = CommentViewModel()
+class PostViewModel {
+    let postHelper = PostsHelper()
+    let commentHelper = CommentsHelper()
     
     func loadPostsAndComments() async throws {
-        try await postViewModel.fetchPosts()
-        try await commentViewModel.fetchComments()
+        try await postHelper.fetchPosts()
+        try await commentHelper.fetchComments()
     }
     
     func searchPostsFor(_ searchText: String) -> [Post] {
-        postViewModel.searchPostsFor(searchText)
+        postHelper.searchPostsFor(searchText)
     }
     
     func commentsFor(_ postId: Int) -> [Comment]{
-        commentViewModel.comments.filter{
+        commentHelper.comments.filter{
             $0.postId == postId
         }
     }

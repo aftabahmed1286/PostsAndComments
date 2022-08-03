@@ -28,7 +28,7 @@ class AppCoordinator: Coordinator {
     func showComments(_ coments: [Comment]) {
         let commentsViewController = CommentViewController.instantiate()
         commentsViewController.appCoordinator = self
-        commentsViewController.viewModel = CommentViewControllerViewModel()
+        commentsViewController.viewModel = CommentViewModel()
         commentsViewController.viewModel?.comments = coments
         navigationController.pushViewController(commentsViewController, animated: true)
     }
