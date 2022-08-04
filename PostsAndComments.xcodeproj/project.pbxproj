@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E29700E289BC5C5009AEFDC /* PostsAndCommentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E29700D289BC5C5009AEFDC /* PostsAndCommentsTests.swift */; };
 		3E68057328944F2E00810140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68057228944F2E00810140 /* AppDelegate.swift */; };
 		3E68057528944F2E00810140 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68057428944F2E00810140 /* SceneDelegate.swift */; };
 		3E68057728944F2E00810140 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68057628944F2E00810140 /* PostViewController.swift */; };
@@ -37,7 +38,19 @@
 		3EDBBDC528985D0C00C8BB10 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDBBDC428985D0C00C8BB10 /* NetworkConstants.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E29700F289BC5C5009AEFDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E68056728944F2D00810140 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E68056E28944F2E00810140;
+			remoteInfo = PostsAndComments;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3E29700B289BC5C4009AEFDC /* PostsAndCommentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostsAndCommentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E29700D289BC5C5009AEFDC /* PostsAndCommentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAndCommentsTests.swift; sourceTree = "<group>"; };
 		3E68056F28944F2E00810140 /* PostsAndComments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostsAndComments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E68057228944F2E00810140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E68057428944F2E00810140 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +84,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E297008289BC5C4009AEFDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E68056C28944F2E00810140 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,10 +110,19 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		3E29700C289BC5C5009AEFDC /* PostsAndCommentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E29700D289BC5C5009AEFDC /* PostsAndCommentsTests.swift */,
+			);
+			path = PostsAndCommentsTests;
+			sourceTree = "<group>";
+		};
 		3E68056628944F2D00810140 = {
 			isa = PBXGroup;
 			children = (
 				3E68057128944F2E00810140 /* PostsAndComments */,
+				3E29700C289BC5C5009AEFDC /* PostsAndCommentsTests */,
 				3E68057028944F2E00810140 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3E68056F28944F2E00810140 /* PostsAndComments.app */,
+				3E29700B289BC5C4009AEFDC /* PostsAndCommentsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +294,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3E29700A289BC5C4009AEFDC /* PostsAndCommentsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E297011289BC5C5009AEFDC /* Build configuration list for PBXNativeTarget "PostsAndCommentsTests" */;
+			buildPhases = (
+				3E297007289BC5C4009AEFDC /* Sources */,
+				3E297008289BC5C4009AEFDC /* Frameworks */,
+				3E297009289BC5C4009AEFDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E297010289BC5C5009AEFDC /* PBXTargetDependency */,
+			);
+			name = PostsAndCommentsTests;
+			productName = PostsAndCommentsTests;
+			productReference = 3E29700B289BC5C4009AEFDC /* PostsAndCommentsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3E68056E28944F2E00810140 /* PostsAndComments */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E68058328944F3000810140 /* Build configuration list for PBXNativeTarget "PostsAndComments" */;
@@ -291,6 +339,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					3E29700A289BC5C4009AEFDC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 3E68056E28944F2E00810140;
+					};
 					3E68056E28944F2E00810140 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -310,11 +362,19 @@
 			projectRoot = "";
 			targets = (
 				3E68056E28944F2E00810140 /* PostsAndComments */,
+				3E29700A289BC5C4009AEFDC /* PostsAndCommentsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3E297009289BC5C4009AEFDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E68056D28944F2E00810140 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +390,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3E297007289BC5C4009AEFDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E29700E289BC5C5009AEFDC /* PostsAndCommentsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E68056B28944F2E00810140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +430,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3E297010289BC5C5009AEFDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E68056E28944F2E00810140 /* PostsAndComments */;
+			targetProxy = 3E29700F289BC5C5009AEFDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		3E68057828944F2E00810140 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -382,6 +458,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3E297012289BC5C5009AEFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FAMCO.PostsAndCommentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostsAndComments.app/PostsAndComments";
+			};
+			name = Debug;
+		};
+		3E297013289BC5C5009AEFDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FAMCO.PostsAndCommentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostsAndComments.app/PostsAndComments";
+			};
+			name = Release;
+		};
 		3E68058128944F3000810140 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -553,6 +663,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3E297011289BC5C5009AEFDC /* Build configuration list for PBXNativeTarget "PostsAndCommentsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E297012289BC5C5009AEFDC /* Debug */,
+				3E297013289BC5C5009AEFDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3E68056A28944F2D00810140 /* Build configuration list for PBXProject "PostsAndComments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
