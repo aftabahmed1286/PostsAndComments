@@ -38,6 +38,7 @@ class CommentViewController: BaseViewController {
         searchController = UISearchController(searchResultsController: commentSearchResultViewController)
         searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
 }

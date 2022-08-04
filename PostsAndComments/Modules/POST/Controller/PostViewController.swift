@@ -39,6 +39,7 @@ class PostViewController: BaseViewController {
         searchController = UISearchController(searchResultsController: postSearchResultViewController)
         searchController?.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     func loadData() {

@@ -18,7 +18,7 @@ class PostsHelper: APIRequestProtocol {
     
     func searchPostsFor(_ searchText: String) -> [Post] {
         posts.filter{
-            $0.title.contains(searchText.lowercased()) || $0.id == Int(searchText)
+            $0.title.lowercased().contains(searchText.lowercased()) || $0.id == Int(searchText)
         }
     }
 }
