@@ -14,12 +14,15 @@ enum StoryboardName {
     static let main = "Main"
 }
 
+/// Storyboarded is responsible 
 protocol Storyboarded {
     static func instantiate() -> Self
 }
 
 extension Storyboarded where Self: UIViewController{
     
+    /// instantiate is a static methos which picks the UIViewController from the Main storyboard and returns the same
+    /// - Returns: UIViewController
     static func instantiate() -> Self {
         
         let fullFileName = NSStringFromClass(self)//<App>.<ViewController>

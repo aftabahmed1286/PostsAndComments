@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// PostsHelper helps in fetching the posts over the network.
 class PostsHelper: APIRequestProtocol {
     var endPoint: EndPoint = .posts
     

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// CommentSearchResultViewModel is a viewModel for the CommentSearchResultViewController
 class CommentSearchResultViewModel {
     
     var comments: [Comment]

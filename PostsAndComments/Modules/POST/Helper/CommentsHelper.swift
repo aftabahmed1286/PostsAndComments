@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// CommentsHelper helps in fetching the comments over the network.
 class CommentsHelper: APIRequestProtocol {
     var endPoint: EndPoint = .comments
     

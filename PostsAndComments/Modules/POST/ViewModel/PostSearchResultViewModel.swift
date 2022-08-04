@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// PostSearchResultViewModel is a viewModel for the PostSearchResultViewController
 class PostSearchResultViewModel {
     
     var posts: [Post]
@@ -17,6 +18,9 @@ class PostSearchResultViewModel {
         self.comments = comments
     }
     
+    /// commentsFor filters the stored comments for the input PostId
+    /// - Parameter postId: Int
+    /// - Returns: [Comment]]
     func commentsFor(_ postId: Int) -> [Comment] {
         self.comments.filter{
             $0.postId == postId

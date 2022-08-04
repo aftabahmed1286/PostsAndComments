@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Endpoint carries all the API endpoints
 enum EndPoint: String {
     case posts = "/posts"
     case comments = "/comments"

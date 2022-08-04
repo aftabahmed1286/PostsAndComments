@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// PostTableViewCell
 class PostTableViewCell: UITableViewCell {
     
     static var identifier: String {

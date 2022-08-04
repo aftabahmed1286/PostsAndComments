@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// Coordinator protocol is the backbone of the Corrdinator Design Pattern
 protocol Coordinator {
     var childCoordinators: [Coordinator] {get set}
     var navigationController: UINavigationController {get set}

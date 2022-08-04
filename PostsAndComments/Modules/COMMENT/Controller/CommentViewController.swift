@@ -7,12 +7,15 @@
 
 import UIKit
 
+/// CommentViewController is the entry point for the COMMENT Module
 class CommentViewController: BaseViewController {
 
-    var viewModel: CommentViewModel?
     
+    /// Properties
+    var viewModel: CommentViewModel?
     var searchController: UISearchController?
     
+    /// IBoutlet
     @IBOutlet weak var commentTableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,6 +25,7 @@ class CommentViewController: BaseViewController {
         
     }
     
+    /// viewSetup is reponsible for the initial view setup
     func viewSetup() {
         self.title = "Comments"
         
@@ -29,10 +33,12 @@ class CommentViewController: BaseViewController {
         searchSetup()
     }
     
+    /// registerNib s responsible for all nib registrations
     func registerNib() {
         commentTableView.register(UINib(nibName: CommentTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CommentTableViewCell.identifier)
     }
     
+    /// searchSetup is responsible for the search controller setup
     func searchSetup() {
         let commentSearchResultViewController = CommentSearchResultViewController.instantiate()
         searchController = UISearchController(searchResultsController: commentSearchResultViewController)

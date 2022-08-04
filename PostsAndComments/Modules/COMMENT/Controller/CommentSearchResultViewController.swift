@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// CommentSearchResultViewController is search results controller for CommentViewController
 class CommentSearchResultViewController: BaseViewController {
     
     var viewModel: CommentSearchResultViewModel?
@@ -23,6 +24,7 @@ class CommentSearchResultViewController: BaseViewController {
     }
 }
 
+//MARK: - Table delegate and datasource
 extension CommentSearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.comments.count ?? 0
@@ -35,6 +37,4 @@ extension CommentSearchResultViewController: UITableViewDelegate, UITableViewDat
         cell.textLabel?.text = viewModel?.comments[indexPath.row].body
         return cell
     }
-    
-    
 }

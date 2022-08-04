@@ -7,10 +7,13 @@
 
 import UIKit
 
+/// PostSearchResultViewController is search results controller for PostViewController
 class PostSearchResultViewController: BaseViewController {
     
+    /// Properties
     var viewModel: PostSearchResultViewModel?
     
+    /// IBOutlet
     @IBOutlet weak var postSearchResultTableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,11 +21,13 @@ class PostSearchResultViewController: BaseViewController {
         self.viewSetup()
     }
     
+    /// viewSetup is reponsible for the initial view setup
     func viewSetup() {
         postSearchResultTableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostTableViewCell.identifier)
     }
 }
 
+//MARK: - Table delegate and datasource
 extension PostSearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.posts.count ?? 0

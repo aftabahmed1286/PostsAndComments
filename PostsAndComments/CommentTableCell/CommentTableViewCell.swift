@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// CommentTableViewCell
 class CommentTableViewCell: UITableViewCell {
     
     static var identifier: String {

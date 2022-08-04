@@ -7,12 +7,14 @@
 
 import UIKit
 
+/// PostViewController is the entry point for the POST Module
 class PostViewController: BaseViewController {
 
+    /// Properties
     let viewModel: PostViewModel = PostViewModel()
-    
     var searchController: UISearchController?
     
+    /// IBOUtlet
     @IBOutlet weak var postTableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class PostViewController: BaseViewController {
         loadData()
     }
     
+    /// viewSetup is reponsible for the initial view setup
     func viewSetup() {
         self.title = "Posts"
         
@@ -29,10 +32,12 @@ class PostViewController: BaseViewController {
         searchSetup()
     }
     
+    /// registerNib s responsible for all nib registrations
     func registerNib() {
         postTableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostTableViewCell.identifier)
     }
     
+    /// searchSetup is responsible for the search controller setup
     func searchSetup() {
         let postSearchResultViewController = PostSearchResultViewController.instantiate()
         postSearchResultViewController.appCoordinator = self.appCoordinator
@@ -41,7 +46,8 @@ class PostViewController: BaseViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-
+    
+    /// loadData is responsible for loading posts in the table
     func loadData() {
         Task{
             do {
@@ -55,6 +61,7 @@ class PostViewController: BaseViewController {
     
 }
 
+//MARK: - Table delegate and datasource
 extension PostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.postHelper.posts.count
@@ -74,6 +81,7 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - SearchController delegate
 extension PostViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text,
