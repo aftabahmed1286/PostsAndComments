@@ -81,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E297006289BC404009AEFDC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3EDBBDB228985A9300C8BB10 /* POST */,
+				3EDBBDB928985BED00C8BB10 /* COMMENT */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		3E68056628944F2D00810140 = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +111,8 @@
 			children = (
 				3E68057228944F2E00810140 /* AppDelegate.swift */,
 				3E68057428944F2E00810140 /* SceneDelegate.swift */,
-				3EA99FA6289A28100008775C /* BASE */,
-				3EDBBDB228985A9300C8BB10 /* POST */,
-				3EDBBDB928985BED00C8BB10 /* COMMENT */,
+				3EA99FA6289A28100008775C /* Base */,
+				3E297006289BC404009AEFDC /* Modules */,
 				3EDBBDBE28985C2800C8BB10 /* Model */,
 				3EDBBDBF28985C6000C8BB10 /* Networking */,
 				3EA99F86289939040008775C /* Storyboard */,
@@ -206,13 +214,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3EA99FA6289A28100008775C /* BASE */ = {
+		3EA99FA6289A28100008775C /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				3EA99F8A28993C090008775C /* BaseViewController.swift */,
 				3EA99F8E28993CCC0008775C /* AppCoordinator.swift */,
 			);
-			path = BASE;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		3EDBBDB228985A9300C8BB10 /* POST */ = {
