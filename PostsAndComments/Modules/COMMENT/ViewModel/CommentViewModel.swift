@@ -17,7 +17,7 @@ class CommentViewModel {
     /// - Returns: [Comment]
     func searchCommentsFor(_ searchText: String) -> [Comment] {
         comments.filter{
-            $0.body.lowercased().contains(searchText.lowercased()) || $0.id == Int(searchText)
+            $0.body.lowercased().contains(searchText.lowercased())
         }
     }
 }

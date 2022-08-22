@@ -22,7 +22,9 @@ class PostViewModel {
     /// - Parameter searchText: String
     /// - Returns: [Post]
     func searchPostsFor(_ searchText: String) -> [Post] {
-        postHelper.searchPostsFor(searchText)
+        postHelper.posts.filter{
+            $0.title.lowercased().contains(searchText.lowercased())
+        }
     }
     
     /// commentsFor filters the stored comments for the input PostId
